@@ -3,9 +3,10 @@ var logfmt = require("logfmt");
 var app = express();
 
 app.use(logfmt.requestLogger());
+app.set('view engine', 'jade');
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  res.render('index');
 });
 
 var port = Number(process.env.PORT || 5000);
